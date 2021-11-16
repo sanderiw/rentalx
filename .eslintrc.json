@@ -13,6 +13,7 @@
   "plugins": ["@typescript-eslint", "eslint-plugin-import-helpers"],
   "rules": {
     "camelcase": "off",
+    "quotes": ["error", "double", { "avoidEscape": true }],
     "import/no-unresolved": "error",
     "@typescript-eslint/naming-convention": [
       "error",

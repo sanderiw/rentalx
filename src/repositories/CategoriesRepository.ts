@@ -1,4 +1,10 @@
-import { Category } from '../model/Category';
+import { Category } from "../model/Category";
+
+// DTO => Data transfer object
+interface ICreateCategoryDTO {
+  name: string;
+  description: string;
+}
 
 class CategoriesRepository {
   private categories: Category[];
@@ -7,7 +13,7 @@ class CategoriesRepository {
     this.categories = [];
   }
 
-  create(name: string, description: string) {
+  create({ name, description }: ICreateCategoryDTO): void {
     const category: Category = new Category();
 
     Object.assign(category, {
@@ -16,6 +22,15 @@ class CategoriesRepository {
     });
 
     this.categories.push(category);
+  }
+
+  list(): Category[] {
+    return this.categories;
+  }
+
+  findByName(name: string): Category {
+    const category = this.categories.find((category) => category.name === name);
+    return category;
   }
 }
 
