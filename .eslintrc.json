@@ -13,8 +13,10 @@
   "plugins": ["@typescript-eslint", "eslint-plugin-import-helpers"],
   "rules": {
     "comma-dangle": ["error", "only-multiline"],
-    "camelcase": "off",
+    "no-use-before-define": "off",
+    "arrow-body-style": ["error", "always"],
     "quotes": ["error", "double", { "avoidEscape": true }],
+    "camelcase": "off",
     "import/no-unresolved": "error",
     "@typescript-eslint/naming-convention": [
       "error",
