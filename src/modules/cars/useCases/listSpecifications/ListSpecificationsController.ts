@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
 
-import { Specification } from "../../model/Specification";
 import { ListSpecificationsUseCase } from "./ListSpecificationsUseCase";
 
 class ListSpecificationsController {
