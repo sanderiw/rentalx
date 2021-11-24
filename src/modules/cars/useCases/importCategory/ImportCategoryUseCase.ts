@@ -26,6 +26,8 @@ class ImportCategoryUseCase {
           categories.push({ name, description });
         })
         .on("end", () => {
+          // Usando o promises do file system com unlink e o path do file pra finalizar a deleção
+          fs.promises.unlink(file.path);
           resolve(categories);
         })
         .on("error", (err) => {
